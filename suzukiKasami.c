@@ -5,8 +5,8 @@ int main() {
     int total;
     printf("Enter number of sites: ");
     scanf("%d", &total);
-    int t[total];
-    int r[total][total];
+    int t[20];
+    int r[20][20];
     for (int i=0; i<total; i++) {
         t[i] = 0;
         for (int j=0; j<total; j++) {
