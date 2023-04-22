@@ -27,7 +27,7 @@ int main() {
         p[tempid].tstamp = tempstamp;
     }
     for (i=0; i<total; i++) {
-        if (p[i].tstamp !=0 ) {
+        if (p[i].tstamp !=0) {
             printf("(%d %d %d) ", p[i].pid, p[i].tstamp, p[i].nreply);
         }
     }

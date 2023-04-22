@@ -43,7 +43,7 @@ int main() {
         hasToken = requested;
         printf("Process %d executes CS\n", hasToken+1);
         t[hasToken]++;
-        printf("Process %d completed executing its CS\n", hasToken    +1);
+        printf("Process %d completed executing its CS\n", hasToken+1);
         for (int i=0; i<total; i++) {
             printf("Process %d R array: ", i+1);
             for (int j=0; j<total; j++) {

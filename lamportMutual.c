@@ -1,11 +1,11 @@
 #include<stdio.h>
 
 struct process {
-    struct message {
-      int tstamp;
-      int pid;
-    }m[20];
-    int nreply;
+  struct message {
+    int tstamp;
+    int pid;
+  }m[20];
+  int nreply;
 }p[50];
 
 int main() {
@@ -51,32 +51,30 @@ int main() {
   }
   while(n>0) {
     for(i=0;i<total;i++) {
-        if(p[i].m[0].pid==i) {
-            printf("Since process %d is at the top of the request queue ,it enters the critical section\n",i);
-            printf("\nUpon exiting the critical section ");
-            printf("process %d sends a RELEASE message to all the other processes\n",i);
-            for(a=0;a<total;a++) {
-                for(j=0;j<n-1;j++) {
-	                p[a].m[j].pid=p[a].m[j+1].pid;
-	                p[a].m[j].tstamp=p[a].m[j+1].tstamp;
-                }
-            }
-            n--;
-            if(n>0) {
-                printf("Now the request queue status in each process is\n");
-                for(a=0;a<total;a++) {
-	                printf("process %d with %d REPLY messages",a,p[a].nreply);
-	                for(b=0;b<n;b++) {
-	                    printf("(%d,%d)<--",p[a].m[b].pid,p[a].m[b].tstamp);
-	                }
-	                printf("\n");
-                }
-            }
-            else
-                printf("Now the request queue is empty\n");
-
-        }
+      if(p[i].m[0].pid==i) {
+          printf("Since process %d is at the top of the request queue ,it enters the critical section\n",i);
+          printf("\nUpon exiting the critical section ");
+          printf("process %d sends a RELEASE message to all the other processes\n",i);
+          for(a=0;a<total;a++) {
+              for(j=0;j<n-1;j++) {
+	              p[a].m[j].pid=p[a].m[j+1].pid;
+	              p[a].m[j].tstamp=p[a].m[j+1].tstamp;
+              }
+          }
+          n--;
+          if(n>0) {
+              printf("Now the request queue status in each process is\n");
+              for(a=0;a<total;a++) {
+	              printf("process %d with %d REPLY messages",a,p[a].nreply);
+	              for(b=0;b<n;b++) {
+	                  printf("(%d,%d)<--",p[a].m[b].pid,p[a].m[b].tstamp);
+	              }
+	              printf("\n");
+              }
+          }
+          else
+            printf("Now the request queue is empty\n");
+      }
     }
   }
-  scanf("%d", &tempid);
 }

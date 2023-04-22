@@ -58,7 +58,5 @@ int main() {
                 break;
             }
         }
-    }
-    while (choice<=2);
-    scanf("%d", &choice);
+    } while (choice<=2);
 }
