@@ -54,7 +54,7 @@ int main() {
       if(p[i].m[0].pid==i) {
           printf("Since process %d is at the top of the request queue ,it enters the critical section\n",i);
           printf("\nUpon exiting the critical section ");
-          printf("process %d sends a RELEASE message to all the other processes\n",i);
+          printf("Process %d sends a RELEASE message to all the other processes\n",i);
           for(a=0;a<total;a++) {
               for(j=0;j<n-1;j++) {
 	              p[a].m[j].pid=p[a].m[j+1].pid;
@@ -65,7 +65,7 @@ int main() {
           if(n>0) {
               printf("Now the request queue status in each process is\n");
               for(a=0;a<total;a++) {
-	              printf("process %d with %d REPLY messages",a,p[a].nreply);
+	              printf("Process %d with %d REPLY messages",a,p[a].nreply);
 	              for(b=0;b<n;b++) {
 	                  printf("(%d,%d)<--",p[a].m[b].pid,p[a].m[b].tstamp);
 	              }
