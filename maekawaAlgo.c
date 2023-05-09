@@ -25,7 +25,7 @@ int main() {
         }
         for (int j=0; j<total; j++) {
             if (curr != j)
-                printf("Process %d sends ack to Process %d\n", j+1, curr+1);
+                printf("Process %d sends ACK to Process %d\n", j+1, curr+1);
         }
         printf("Process %d executes its CS\n", curr+1);
         for (int j=0; j<total; j++) {
