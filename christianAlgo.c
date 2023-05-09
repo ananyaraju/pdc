@@ -40,15 +40,16 @@ int main() {
     delay(delay1, ptms); //delay when sending message
     printf("Server time (Ts): %02d:%02d:%02d\n", ptms->tm_hour,
            ptms->tm_min, ptms->tm_sec);
+    int ts = ptms->tm_hour*3600 + ptms->tm_min*60 + ptms->tm_sec;
     time_t rawtime1 = time(NULL);
     struct tm *ptm1 = localtime(&rawtime1);
     delay(delay1+delay2, ptm1); //delay when recieving message
     printf("Current time (T1): %02d:%02d:%02d\n", ptm1->tm_hour, ptm1->tm_min, ptm1->tm_sec);
     int t1 = ptm1->tm_hour*3600 + ptm1->tm_min*60 + ptm1->tm_sec;
     int rtt = (t1-t0)/2; //round trip time
-    int ts = ptms->tm_hour*3600 + ptms->tm_min*60 + ptms->tm_sec;
     //calculating client clock time to be set
     int tclient = ts+rtt;
+    printf("t0=%d t1=%d ts=%d rtt=%d\n", t0, t1, ts, rtt);
     printf("%d CLIENT TIME \n", tclient);
     int hr = 0, min = 0, sec = 0;
     while (tclient>=3600) {
