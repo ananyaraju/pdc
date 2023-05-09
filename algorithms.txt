@@ -1,11 +1,11 @@
-1. lamports mutual exclusion DONE
-2. lamports clock DONE
-3. ricarts DONE
-4. maekawas DONE
+1. lamports mutual exclusion    DONE
+2. lamports clock               DONE
+3. ricarts                      DONE
+4. maekawas                     DONE
 5. raymond's tree
-6. suzuki kasami DONE
+6. suzuki kasami                DONE
 7. singhal heuristic
-8. christian TBV
-9. berkley DONE
-10. bully DONE
-11. ring DONE
+8. christian                    DONE
+9. berkley                      DONE
+10. bully algorithm             DONE
+11. ring algorithm              DONE
